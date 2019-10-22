@@ -60,6 +60,92 @@
    - URL
    - Representation
 * HTTP Messages
+  HTTP messages bestaan uit http requests en http responses.
+  
+  Een client stuurt een request naar de server:
+  client -> request -> server
+
+  Een server stuurt een response naar de client:
+  server -> response -> client
+
+  Request en Response formaat zijn gespecificeerd in HTTP/1.1
+
+  Request en Response zijn van verschillend type maar worden
+  gecommuniceerd over een en dezelfde HTTP transaction.
+
+  Handmatig een GET Request doen:
+
+  #+BEGIN_SRC sh
+  $ openssl s_client -connect odetocode.com:443
+  
+  GET /odetocode.jpg HTTP/1.1
+  Host: odetocode.com
+  #+END_SRC
+  En druk op enter. Gebruik in Linux het reset commando's om je
+  terminal te resetten.
+** HTTP Request methods
+   | Methods | Description                         |
+   |---------+-------------------------------------|
+   | GET     | Retrieve a resource                 |
+   | POST    | Update a resource                   |
+   | PUT     | Store a resource                    |
+   | DELETE  | Remove a resource                   |
+   | HEAD    | Retrieve the headers for a resource |
+   |         |                                     |
+
+   Deze lijst is niet volledig! GET en POST zijn de "primary
+   workhorses" van het web!
+** Safe methods
+   Een GET request hoort nooit een side effect te hebben op de
+   server. Een POST request kan een wijziging op de server betekenen!
+
+   Je browser zal interveniëren bij het herladen van de pagina na een
+   POST request. Herladen na een POST request kan mogelijk negatieve
+   gevolgen hebben zoals twee keer inschrijven voor een nieuwsbrief.
+** GET en POST scenarios
+   Veel voorkomende oplossing voor het hierboven beschreven probleem
+   is een POST / Redirect / GET patroon. Na een POST (bijv. signup)
+   wordt de gebruiker doorgestuurd naar een nieuwe pagina met een
+   redirect.
+
+   Resultaten van een POST request gaan in de HTTP message.
+
+   Zoeken is een safe operation en hoeft niet gedaan te worden met een
+   POST request. Dit kan met een GET request. Het resultaat van een
+   zoekopdracht kan via een query string worden meegegeven aan de
+   server. Zoeken kan nu herhaald worden via het herladen van de
+   pagina. Dit heeft geen side effects op de server.
+** Request messages
+   Request messages zijn altijd in ASCII. Request messages hebben het
+   volgende formaat:
+
+   #+BEGIN_EXAMPLE
+   [method][url][version]
+   [headers]
+   [body]
+   #+END_EXAMPLE
+   Een host header is verplicht. [method][url][version] wordt de
+   startline genoemd.
+
+   Voorbeeld:
+   #+BEGIN_EXAMPLE
+   GET http://server.com/articles/741.aspx HTTP/1.1
+   Host: odetocode.com
+   Accept-Language: fr-FR
+   Date: Fri, 9 Aug 2002 21:12:00 GMT
+   #+END_EXAMPLE
+
+   Veel voorkomende request headers:
+   | Header            | Description                        |
+   |-------------------+------------------------------------|
+   | Referer           | The URL of the referring page      |
+   | User-Agent        | Information about the browser      |
+   | Accept            | Preferred media types              |
+   | Accept language   | Preferred language                 |
+   | Cookie            | Cookie information                 |
+   | If-Modified-Since | Date of last retrieval             |
+   | Date              | Creation timestamp for the message |
+   |                   |                                    |
 * HTTP Connections
 * HTTP Architecture
 * HTTP Security
