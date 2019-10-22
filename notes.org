@@ -17,12 +17,24 @@
 
   - query: q=jaboticaba
 
-  http://wikipedia.org/wiki/jabuticaba#description
+  http://wikipedia.org/wiki/jabuticaba#Description
 
   - fragment: description
 
   Het fragment wordt alleen gebruikt door de browser om een heading
   binnen een pagina te lokaliseren.
+** URL safe characters
+   [a-zA-Z0-9]
+   [$-_.+*'(),]
+
+   Percent encoded / URL encoded wordt gebruikt om unsafe characters
+   in een URL te coderen:
+
+   - space: %20
+   - !: %21
+   - ": %22
+
+   Getallen in percent encoding zijn in hexadecimale notatie!
 * HTTP Messages
 * HTTP Connections
 * HTTP Architecture
