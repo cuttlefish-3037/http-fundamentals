@@ -1,6 +1,6 @@
 #+TITLE: HTTP Fundamentals
 
-* bronnen
+* Bronnen
   [[https://www.pluralsight.com/courses/xhttp-fund][HTTP Fundamentals door Scott Allen]]
 * HTTP Resources
   Een URL heeft de volgende vorm:
@@ -173,6 +173,34 @@
 
    Html zit in de body van de response message. X-Headers zijn
    gereserveerd voor niet standaard headers
+** Status code categories
+   HTTP status codes zijn verdeeld in categoriën:
+
+   |   Range | Category      |
+   |---------+---------------|
+   | 100-199 | Informational |
+   | 200-299 | Successful    |
+   | 300-399 | Redirection   |
+   | 400-499 | Client error  |
+   | 500-599 | Server error  |
+
+*** Veelgebruikte status codes
+    | Code | Reason                | Description                                  |
+    |------+-----------------------+----------------------------------------------|
+    |  200 | OK                    | Success!                                     |
+    |  301 | Moved permanently     | Resource moved, don't check here again       |
+    |  302 | Moved temporarily     | Resource moved, but chech here again         |
+    |  304 | Not modified          | Resource hasn't changed since last retrieval |
+    |  400 | Bad request           | Bad syntax?                                  |
+    |  401 | Unauthorized          | Client might need to authenticate            |
+    |  403 | Forbidden             | Refused access                               |
+    |  404 | Not found             | Resource doesn't exist                       |
+    |  500 | Internal server error | Something went wrong during processing       |
+    |  503 | Service unavailable   | Server will not service the request          |
+    |      |                       |                                              |
+** Telerik (HTTP) Fiddler
+   Met [[https://www.telerik.com/fiddler][Fiddler]] kun je HTTP verkeer in realtime onderscheppen en
+   bekijken.
 * HTTP Connections
 * HTTP Architecture
 * HTTP Security
