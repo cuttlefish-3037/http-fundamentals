@@ -35,6 +35,30 @@
    - ": %22
 
    Getallen in percent encoding zijn in hexadecimale notatie!
+** Mime types
+   HTTP gebruikt MIME types o het soort content te duiden:
+   
+   | Type/Subtype | Description |
+   |--------------+-------------|
+   | images/gif   | GIF image   |
+   | image/png    | PNG image   |
+   | text/xml     | XML         |
+   | text/plain   | just text   |
+   | text/html    | HTML        |
+   | .            |             |
+   | .            |             |
+   | .            |             |
+   | enzovoort    |             |
+   
+
+   Mime was oorspronkelijk bedoeld voor email.
+** Content negotiation
+   Browser kan specificeren welke type content het wil ontvangen.
+** Conclusion
+   Tot nu toe hebben we behandeld:
+   - resources
+   - URL
+   - Representation
 * HTTP Messages
 * HTTP Connections
 * HTTP Architecture
