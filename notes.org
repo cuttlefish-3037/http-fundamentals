@@ -146,6 +146,33 @@
    | If-Modified-Since | Date of last retrieval             |
    | Date              | Creation timestamp for the message |
    |                   |                                    |
+** Response message
+   Een response message heeft het volgende formaat:
+
+   #+BEGIN_EXAMPLE
+   [version][status][reason]
+   [headers]
+   [body]
+   #+END_EXAMPLE
+
+   Voorbeeld:
+   #+BEGIN_EXAMPLE
+   HTTP/1.1 200 OK
+   Cache-Control: private
+   Content-Type: text/html; charset=utf-8
+   Server: Microsoft-IIS/7.0
+   X-AspNet-Version: 2.0.50727
+   X-Powered-By: ASP.NET
+   Date: Sat, 14 Feb 2003 04:00:08 GMT
+   Content-Length: 17151
+
+   <html>
+   ... content ...
+   </html>
+   #+END_EXAMPLE
+
+   Html zit in de body van de response message. X-Headers zijn
+   gereserveerd voor niet standaard headers
 * HTTP Connections
 * HTTP Architecture
 * HTTP Security
