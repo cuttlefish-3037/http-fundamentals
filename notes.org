@@ -1,0 +1,29 @@
+#+TITLE: HTTP Fundamentals
+
+* bronnen
+  [[https://www.pluralsight.com/courses/xhttp-fund][HTTP Fundamentals door Scott Allen]]
+* HTTP Resources
+  Een URL heeft de volgende vorm:
+
+  http://food.com:80/recipes/squash
+
+  De onderdelen van een URL hebben de volgende namen:
+  - url scheme: http:
+  - host: food.com
+  - port: 80
+  - url path: /recipes/squash
+
+  http://bing.com/search?q=jaboticaba
+
+  - query: q=jaboticaba
+
+  http://wikipedia.org/wiki/jabuticaba#description
+
+  - fragment: description
+
+  Het fragment wordt alleen gebruikt door de browser om een heading
+  binnen een pagina te lokaliseren.
+* HTTP Messages
+* HTTP Connections
+* HTTP Architecture
+* HTTP Security
