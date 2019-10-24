@@ -19,12 +19,13 @@
 
   http://wikipedia.org/wiki/jabuticaba#Description
 
-  - fragment: description
+  - fragment: Description
 
   Het fragment wordt alleen gebruikt door de browser om een heading
   binnen een pagina te lokaliseren.
 ** URL safe characters
    [a-zA-Z0-9]
+
    [$-_.+*'(),]
 
    Percent encoded / URL encoded wordt gebruikt om unsafe characters
