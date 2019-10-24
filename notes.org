@@ -203,5 +203,27 @@
    Met [[https://www.telerik.com/fiddler][Fiddler]] kun je HTTP verkeer in realtime onderscheppen en
    bekijken.
 * HTTP Connections
+** Whirlwind Networking
+   De browser opent een socket en schrijft data naar het socket.
+
+   |                | Layer       | Protocol            | Server   |
+   |----------------+-------------+---------------------+----------|
+   | In de computer | Application | HTTP                | HTTP     |
+   |                | Transport   | TCP                 | TCP      |
+   |                | Network     | IP                  | IP       |
+   |----------------+-------------+---------------------+----------|
+   | Over de kabel  | Datalink    | Ehernet >>> Media > | Ethernet |
+   |                |             |                     |          |
+** Programming Sockets
+   Zie httpFundamentals C# programma dat ik heb geschreven
+** Handshakes with a shark
+   Met [[https://www.wireshark.org/][Wireshark]] kun je HTTP verkeer inspecteren.
+** On the evolution of HTTP
+   We laten HTTP verbindingen open staan om meerdere resources te
+   versturen.
+** Parallel connections
+   Met een aantal parallelle connecties kan een browser tegelijkertijd
+   resources downloaden.
+** Persistent connections
 * HTTP Architecture
 * HTTP Security
